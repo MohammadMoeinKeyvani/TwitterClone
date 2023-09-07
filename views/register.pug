@@ -1,0 +1,32 @@
+extends layouts/login-layout.pug
+
+block content
+    .loginContainer 
+        h1 ثبت نام
+        form#registerForm(method="post", onsubmit="event.preventDefault(); validateForm();") 
+
+            p.errorMessage #{errorMessage}
+
+            input(type="text", name="firstName", placeholder="نام", value=firstName required="")
+            input(type="text", name="lastName", placeholder="نام خانوادگی", value=lastName required="")
+            input(type="text", name="username", placeholder="نام کاربری", value=username required="")
+            input(type="email", name="email", placeholder="ایمیل", value=email required="")
+            input#password(type="password", name="password", placeholder="رمز عبور", required="")
+            input#passwordConf(type="password", name="passwordConf", placeholder="تکرار رمز عبور", required="")
+            input(type="submit", value="ثبت نام")
+
+        a(href="/login") در حال حاضر یک حساب کاربری دارید؟ از اینجا وارد شوید 
+
+    script. 
+        var passwordField = document.getElementById("password")
+        var passwordConfirmField = document.getElementById("passwordConf")
+        var form = document.getElementById("registerForm")
+
+        function validateForm() {
+            if(passwordField.value != passwordConfirmField.value) {
+                alert("رمز عبور مطابقت ندارد لطفا دوباره تلاش کنید")
+            }
+            else {
+                form.submit();
+            }
+        }

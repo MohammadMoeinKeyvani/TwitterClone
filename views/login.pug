@@ -1,0 +1,14 @@
+extends layouts/login-layout.pug
+
+block content
+    .loginContainer 
+        h1 ورود
+        form(method="post") 
+
+
+            p.errorMessage #{errorMessage}
+
+            input(type="text", name="logUsername", placeholder="نام کاربری", value=logUsername required="")
+            input(type="password", name="logPassword", placeholder="رمز عبور", required="")
+            input(type="submit", value="ورود")
+        a(href="/register") نیاز به یک حساب کاربری دارید؟ اینجا ثبت نام کنید 
