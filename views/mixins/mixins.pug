@@ -1,0 +1,8 @@
+mixin creatPostForm(userLoggedIn)
+    .postFormContainer 
+        .userImageContainer 
+            img(src=userLoggedIn.profilePic, alt="تصویر پروفایل کاربر")
+        .textareaContainer 
+            textarea#postTextarea(placeholder="چه اتفاقی در حال رخ دادن است؟")
+            .buttonsContainer 
+                button#submitPostButton(disabled="") پست
