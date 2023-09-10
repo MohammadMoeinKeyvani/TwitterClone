@@ -140,11 +140,13 @@ button {
     display: flex;
     flex-direction: column;
     flex: 1;
+    
 }
 
 .username,
 .date {
     color: var(--greyText);
+    unicode-bidi: embed;
 }
 
 .displayName {
@@ -178,4 +180,9 @@ button {
     background-color: #d4edff;
     color: var(--blue);
     border-radius: 50%;
+}
+
+.header {
+    direction: ltr;
+    text-align: right;
 }
